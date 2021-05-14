@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace codelabsAula2
 {
@@ -19,7 +20,7 @@ namespace codelabsAula2
                 switch (opcaoUsuario)
                 {
                     case 1:
-                        CadastrarTurma();                      
+                        CadastrarTurma();
                         break;
                         
 
@@ -41,7 +42,6 @@ namespace codelabsAula2
                     case 5:
                         AdicionarFalta();
                         break;
-                       
 
                 }
                 opcaoUsuario = ObterOpcaoUsuario();
@@ -79,7 +79,7 @@ namespace codelabsAula2
                
                 for(int x = 0; x < listaAlunos.Length; x++)
                 {
-                    Console.WriteLine($"Aluno {x} : {listaAlunos[x]} | Notas : {nota1Alunos[x]} , {nota2Alunos[x]} | Média : {mediaAlunos[x]} | Faltas:{faltaAlunos[x]} |");
+                    Console.WriteLine($"Aluno {x} : {listaAlunos[x]} | Nota 1 : {nota1Alunos[x].ToString("F2", CultureInfo.InvariantCulture)} | Nota 2 : {nota2Alunos[x].ToString("F2", CultureInfo.InvariantCulture)} | Média : {mediaAlunos[x].ToString("F2", CultureInfo.InvariantCulture)} | Faltas: {faltaAlunos[x]} |");
                     if(mediaAlunos[x] < 7 || faltaAlunos[x] >= 4)
                     {
                         Console.WriteLine("Reprovado conforme política de notas e faltas");
@@ -99,17 +99,17 @@ namespace codelabsAula2
                 {
                     if(listaAlunos[x] == nomeAluno)
                     {
-                        Console.WriteLine($"Informe a primeira nota (de 0 a 10) a ser atribuida ao aluno {listaAlunos[x]}: ");
-                        double nota1 = double.Parse(Console.ReadLine());
-                        Console.WriteLine($"Informe a segunda nota (de 0 a 10) a ser atribuida ao aluno {listaAlunos[x]}: ");                        
-                        double nota2 = double.Parse(Console.ReadLine());
+                        Console.WriteLine($"Informe a primeira nota a ser atribuida ao aluno {listaAlunos[x]} (de 0 a 10 para numeros decimais utilize ' . '): ");
+                        double nota1 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                        Console.WriteLine($"Informe a segunda nota a ser atribuida ao aluno {listaAlunos[x]} (de 0 a 10 para numeros decimais utilize ' . '): ");                        
+                        double nota2 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                         double media = (nota1 + nota2) / 2;
                         if(nota1 > 0 && nota1 <= 10 || nota2 > 0 && nota2 <= 10)
                         {
                             nota1Alunos[x] = nota1;
                             nota2Alunos[x] = nota2;
                             mediaAlunos[x] = media;
-                            Console.WriteLine($"Aluno(a) {listaAlunos[x]} - notas {nota1Alunos[x]} e {nota2Alunos[x]} cadastradas com sucesso! média :  {mediaAlunos[x]} ");
+                            Console.WriteLine($"Aluno(a) {listaAlunos[x]} - notas {nota1Alunos[x].ToString("F2", CultureInfo.InvariantCulture)} e {nota2Alunos[x].ToString("F2", CultureInfo.InvariantCulture)} cadastradas com sucesso! média :  {mediaAlunos[x].ToString("F2", CultureInfo.InvariantCulture)} ");
                         }
                         else
                         {
@@ -122,7 +122,7 @@ namespace codelabsAula2
             void AdicionarFalta()
             {
                 Console.WriteLine("Informe o nome do aluno para o qual deseja atribuir falta: ");
-                string nomeAluno = Console.ReadLine();
+                string nomeAluno = Console.ReadLine().ToUpper();
                 for (int x = 0; x < listaAlunos.Length; x++)
                 {
                     if(listaAlunos[x] == nomeAluno)
@@ -130,7 +130,7 @@ namespace codelabsAula2
                         faltaAlunos[x]++;
                         Console.WriteLine($"O Aluno {listaAlunos[x]} encontra-se com {faltaAlunos[x]} faltas até o momento. ");
 
-                    }
+                    }                    
                 }
             }
 
