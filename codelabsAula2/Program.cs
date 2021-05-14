@@ -9,7 +9,9 @@ namespace codelabsAula2
             int opcaoUsuario = ObterOpcaoUsuario();
             int qtdAlunos = 0;
             string[] listaAlunos = new string[qtdAlunos];
-            double[] notasAlunos = new double[qtdAlunos];
+            double[] nota1Alunos = new double[qtdAlunos];
+            double[] nota2Alunos = new double[qtdAlunos];
+            double[] mediaAlunos = new double[qtdAlunos];
             int[] faltaAlunos = new int[qtdAlunos];
             while (opcaoUsuario != 0)
             {
@@ -17,7 +19,7 @@ namespace codelabsAula2
                 switch (opcaoUsuario)
                 {
                     case 1:
-                        CadastrarTurma();
+                        CadastrarTurma();                      
                         break;
                         
 
@@ -53,7 +55,9 @@ namespace codelabsAula2
                 qtdAlunos = int.Parse(Console.ReadLine());
                 Console.WriteLine($"A turma {nome_sala}, com máximo de {qtdAlunos} alunos, foi criada com sucesso!");
                 listaAlunos = new string[qtdAlunos];
-                notasAlunos = new double[qtdAlunos];
+                nota1Alunos = new double[qtdAlunos];
+                nota2Alunos = new double[qtdAlunos];
+                mediaAlunos = new double[qtdAlunos];
                 faltaAlunos = new int[qtdAlunos];
 
             }
@@ -68,7 +72,6 @@ namespace codelabsAula2
                     Console.WriteLine($"Aluno {x + 1}");
                     listaAlunos[x] = Console.ReadLine().ToUpper();                   
                 }
-               
             }
 
             void ListarAlunos()
@@ -76,8 +79,8 @@ namespace codelabsAula2
                
                 for(int x = 0; x < listaAlunos.Length; x++)
                 {
-                    Console.WriteLine($"Aluno {x} : {listaAlunos[x]} | nota:{notasAlunos[x]} | faltas:{faltaAlunos[x]} |");
-                    if(notasAlunos[x] < 7 || faltaAlunos[x] >= 4)
+                    Console.WriteLine($"Aluno {x} : {listaAlunos[x]} | Notas : {nota1Alunos[x]} , {nota2Alunos[x]} | Média : {mediaAlunos[x]} | Faltas:{faltaAlunos[x]} |");
+                    if(mediaAlunos[x] < 7 || faltaAlunos[x] >= 4)
                     {
                         Console.WriteLine("Reprovado conforme política de notas e faltas");
                     }
@@ -86,7 +89,6 @@ namespace codelabsAula2
                         Console.WriteLine("Aprovado! ");
                     }
                 }
-                
             }
 
             void AdicionarNotas()
@@ -97,12 +99,17 @@ namespace codelabsAula2
                 {
                     if(listaAlunos[x] == nomeAluno)
                     {
-                        Console.WriteLine($"Informe uma nota (de 0 a 10) a ser atribuida ao aluno {listaAlunos[x]}: ");
-                        double nota = double.Parse(Console.ReadLine());
-                        if(nota > 0 && nota <= 10)
+                        Console.WriteLine($"Informe a primeira nota (de 0 a 10) a ser atribuida ao aluno {listaAlunos[x]}: ");
+                        double nota1 = double.Parse(Console.ReadLine());
+                        Console.WriteLine($"Informe a segunda nota (de 0 a 10) a ser atribuida ao aluno {listaAlunos[x]}: ");                        
+                        double nota2 = double.Parse(Console.ReadLine());
+                        double media = (nota1 + nota2) / 2;
+                        if(nota1 > 0 && nota1 <= 10 || nota2 > 0 && nota2 <= 10)
                         {
-                            notasAlunos[x] = nota;
-                            Console.WriteLine($"{listaAlunos[x]} - nota : {notasAlunos[x]} cadastrada com sucesso !");
+                            nota1Alunos[x] = nota1;
+                            nota2Alunos[x] = nota2;
+                            mediaAlunos[x] = media;
+                            Console.WriteLine($"Aluno(a) {listaAlunos[x]} - notas {nota1Alunos[x]} e {nota2Alunos[x]} cadastradas com sucesso! média :  {mediaAlunos[x]} ");
                         }
                         else
                         {
@@ -110,7 +117,6 @@ namespace codelabsAula2
                         }
                     }
                 }
-                
             }
 
             void AdicionarFalta()
@@ -126,7 +132,6 @@ namespace codelabsAula2
 
                     }
                 }
-                
             }
 
             int ObterOpcaoUsuario()
