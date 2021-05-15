@@ -1,0 +1,16 @@
+C:\Users\marim\source\repos\SuperBlueShopp\SuperBlueShopp\obj\Debug\net5.0\SuperBlueShopp.csprojAssemblyReference.cache
+C:\Users\marim\source\repos\SuperBlueShopp\SuperBlueShopp\obj\Debug\net5.0\SuperBlueShopp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marim\source\repos\SuperBlueShopp\SuperBlueShopp\obj\Debug\net5.0\SuperBlueShopp.AssemblyInfoInputs.cache
+C:\Users\marim\source\repos\SuperBlueShopp\SuperBlueShopp\obj\Debug\net5.0\SuperBlueShopp.AssemblyInfo.cs
+C:\Users\marim\source\repos\SuperBlueShopp\SuperBlueShopp\obj\Debug\net5.0\SuperBlueShopp.csproj.CoreCompileInputs.cache
+C:\Users\marim\source\repos\SuperBlueShopp\SuperBlueShopp\bin\Debug\net5.0\SuperBlueShopp.exe
+C:\Users\marim\source\repos\SuperBlueShopp\SuperBlueShopp\bin\Debug\net5.0\SuperBlueShopp.deps.json
+C:\Users\marim\source\repos\SuperBlueShopp\SuperBlueShopp\bin\Debug\net5.0\SuperBlueShopp.runtimeconfig.json
+C:\Users\marim\source\repos\SuperBlueShopp\SuperBlueShopp\bin\Debug\net5.0\SuperBlueShopp.runtimeconfig.dev.json
+C:\Users\marim\source\repos\SuperBlueShopp\SuperBlueShopp\bin\Debug\net5.0\SuperBlueShopp.dll
+C:\Users\marim\source\repos\SuperBlueShopp\SuperBlueShopp\bin\Debug\net5.0\ref\SuperBlueShopp.dll
+C:\Users\marim\source\repos\SuperBlueShopp\SuperBlueShopp\bin\Debug\net5.0\SuperBlueShopp.pdb
+C:\Users\marim\source\repos\SuperBlueShopp\SuperBlueShopp\obj\Debug\net5.0\SuperBlueShopp.dll
+C:\Users\marim\source\repos\SuperBlueShopp\SuperBlueShopp\obj\Debug\net5.0\ref\SuperBlueShopp.dll
+C:\Users\marim\source\repos\SuperBlueShopp\SuperBlueShopp\obj\Debug\net5.0\SuperBlueShopp.pdb
+C:\Users\marim\source\repos\SuperBlueShopp\SuperBlueShopp\obj\Debug\net5.0\SuperBlueShopp.genruntimeconfig.cache
